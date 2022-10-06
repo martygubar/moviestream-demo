@@ -259,7 +259,7 @@ create table movie as
                 cast(m.doc.gross as number) gross,
                 cast(m.doc.rating as number) rating,
                 cast(m.doc.list_price as number) as list_price,
-                cast(m.doc.genres as varchar2(4000)) as genres,
+                cast(m.doc.genre as varchar2(4000)) as genres,
                 cast(m.doc.sku as varchar2(30 byte)) as sku,   
                 cast(m.doc.year as number) as year,
                 to_date(m.doc.opening_date, 'YYYY-MM-DD') as opening_date,

@@ -31,16 +31,37 @@ npm run build
 ```
 
 ## Docker install
+### Deploy compute node
+* OL 7.9
+* Add ingress rule for port 80
+
+### Install docker packages
+```sh
+sudo yum-config-manager --enable ol7_addons
+sudo yum install docker-engine -y
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
 -- ensure opc is part of the docker group
 -- otherwise, you will get a permissions error when trying to connect to docker
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
 -- log out and back in
 
-
 ## Build the docker
 -- Go to the directory containing moviestream's docker file
 docker build -t mgubar/moviestream:1.0 .
 
 ## Run it
-sudo docker run -it -p 80:8080 -d --name moviestream mgubar/moviestream:1.0
+docker run -it -p 80:8080 -d --name moviestream mgubar/moviestream:1.0
+
+## Go to the URL
+http://129.159.54.249/
+
+## Publish the docker....
+docker login
+docker push mgubar/moviestream:1.0
+
+## Pull the docker
+sudo docker pull mgubar/moviestream:1.0
