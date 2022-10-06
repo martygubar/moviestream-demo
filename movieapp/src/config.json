@@ -1,5 +1,5 @@
 {
-    "HOSTNAME": "https://g9d1f2d8d1f91d1-moviedev.adb.us-ashburn-1.oraclecloudapps.com",
+    "HOSTNAME": "https://qggemtywectzfj9-movieapp.adb.sa-saopaulo-1.oraclecloudapps.com",
     "ORDSPATH": "/ords/moviestream/soda/latest/",
     "CUSTOMERCOLLECTION": "customerCollection",
     "NOTIFICATIONCOLLECTION": "notificationCollection",

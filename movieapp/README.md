@@ -12,6 +12,8 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+npm upgrade
+
 ```sh
 npm install
 ```
@@ -27,3 +29,18 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Docker install
+-- ensure opc is part of the docker group
+-- otherwise, you will get a permissions error when trying to connect to docker
+sudo groupadd docker
+sudo usermod -aG docker ${USER}
+-- log out and back in
+
+
+## Build the docker
+-- Go to the directory containing moviestream's docker file
+docker build -t mgubar/moviestream:1.0 .
+
+## Run it
+sudo docker run -it -p 80:8080 -d --name moviestream mgubar/moviestream:1.0
